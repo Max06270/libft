@@ -6,12 +6,12 @@
 /*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 16:06:21 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/20 18:33:34 by mkehon           ###   ########.fr       */
+/*   Updated: 2017/09/21 15:08:42 by mkehon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* by definition 'restrict' pointers cannot be used somewhere else */
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+/* 'restrict' qualifier not allowed, it makes pointers not usable somewhere else */
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*s;
 	unsigned char 	*d;
