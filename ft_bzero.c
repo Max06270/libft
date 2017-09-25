@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/20 15:25:22 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/20 16:05:33 by mkehon           ###   ########.fr       */
+/*   Created: 2017/09/25 11:20:17 by mkehon            #+#    #+#             */
+/*   Updated: 2017/09/25 11:35:22 by mkehon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*mem;
-	size_t			i;
+	unsigned char	*ptr;
 
-	i = 0;
-	mem = (unsigned char *)s;
-	while (i < n)
-	{
-		mem[i] = '0';
-		i++;
-	}
-}
-
-int		main()
-{
-	char p[] = "Bonjour la famille";
-	ft_bzero(p, 5);
-	printf("%s",p);
-	return (0);
+	ptr = (unsigned char*)s;
+	while (n--)
+		*ptr++ = '\0';
 }

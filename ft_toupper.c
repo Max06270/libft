@@ -5,28 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 14:11:54 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/21 14:32:20 by mkehon           ###   ########.fr       */
+/*   Created: 2017/09/25 11:45:36 by mkehon            #+#    #+#             */
+/*   Updated: 2017/09/25 11:45:42 by mkehon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	if (c >= 97 && c <= 122)
-		c = c - 32;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
 	return (c);
-}
-
-int		main()
-{
-	int		i;
-	i = -2;
-	while (i < 130)
-	{
-		printf("%c %c %c\n", i, toupper(i), ft_toupper(i));
-		i++;
-	}
-	return (0);
 }

@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 15:06:00 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/21 15:36:41 by mkehon           ###   ########.fr       */
+/*   Created: 2017/09/25 11:23:33 by mkehon            #+#    #+#             */
+/*   Updated: 2017/09/25 11:35:22 by mkehon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-	if (ft_isupper(c) || ft_islower(c))
-		return (1);
-	return (0);
+	return (ft_islower(c) || ft_isupper(c));
 }

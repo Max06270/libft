@@ -5,25 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/20 16:06:21 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/21 15:08:42 by mkehon           ###   ########.fr       */
+/*   Created: 2017/09/25 11:28:36 by mkehon            #+#    #+#             */
+/*   Updated: 2017/09/25 11:35:23 by mkehon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* 'restrict' qualifier not allowed, it makes pointers not usable somewhere else */
+#include "libft.h"
+
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	*s;
-	unsigned char 	*d;
-	size_t			i;
+	unsigned char	*oct1;
+	unsigned char	*oct2;
 
-	s = (unsigned char*)src;
-	d = (unsigned char*)dst;
-	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
+	if (dst == src || n == 0)
+		return (dst);
+	oct1 = (unsigned char*)dst;
+	oct2 = (unsigned char*)src;
+	while (n--)
+		*oct1++ = *oct2++;
 	return (dst);
 }

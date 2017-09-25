@@ -5,28 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 14:11:54 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/21 14:29:48 by mkehon           ###   ########.fr       */
+/*   Created: 2017/09/25 11:45:30 by mkehon            #+#    #+#             */
+/*   Updated: 2017/09/25 11:45:42 by mkehon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
 	return (c);
-}
-
-int		main()
-{
-	int		i;
-	i = -2;
-	while (i < 130)
-	{
-		printf("%c %c %c\n", i, tolower(i), ft_tolower(i));
-		i++;
-	}
-	return (0);
 }

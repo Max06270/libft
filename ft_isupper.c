@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 15:31:07 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/21 15:32:51 by mkehon           ###   ########.fr       */
+/*   Created: 2017/09/25 16:24:20 by mkehon            #+#    #+#             */
+/*   Updated: 2017/09/25 16:24:22 by mkehon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isupper(int c)
+int	ft_isupper(int c)
 {
-	if (c >= 0101 && <= 0132)
-		return (1);
-	return (0);
+	return (c >= 'A' && c <= 'Z');
 }

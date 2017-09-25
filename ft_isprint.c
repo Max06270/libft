@@ -5,23 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 14:34:36 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/21 14:53:47 by mkehon           ###   ########.fr       */
+/*   Created: 2017/09/25 11:24:32 by mkehon            #+#    #+#             */
+/*   Updated: 2017/09/25 11:35:22 by mkehon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	if (c >=040 && c <= 0176)
-		return (1);
-	return (0);
-
-}
-
-int		main()
-{
-	printf("%i", ft_isprint('v'));
-	return (0);
+	return (c >= 32 && c <= 126);
 }

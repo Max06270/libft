@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 15:31:07 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/21 15:34:19 by mkehon           ###   ########.fr       */
+/*   Created: 2017/09/25 16:24:35 by mkehon            #+#    #+#             */
+/*   Updated: 2017/09/25 16:24:36 by mkehon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_islower(int c)
+int	ft_islower(int c)
 {
-	if (c >= 0141 && <= 0172)
-		return (1);
-	return (0);
+	return (c >= 'a' && c <= 'z');
 }
