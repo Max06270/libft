@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tburnouf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/25 16:23:48 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/25 16:23:50 by mkehon           ###   ########.fr       */
+/*   Created: 2017/09/27 14:34:01 by tburnouf          #+#    #+#             */
+/*   Updated: 2017/09/27 14:34:02 by tburnouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,27 @@
 
 char	*ft_strstr(const char *big, const char *little)
 {
-	size_t i;
-	size_t j;
+	int i;
+	int j;
+	int pos;
 
-	if (*little == '\0')
-		return ((char*)big);
 	i = 0;
+	j = 0;
+	if (little[0] == 0 || !little)
+		return ((char *)&big[0]);
 	while (big[i])
 	{
-		j = 0;
-		while (big[i + j] == little[j])
+		if (little[j] == big[i])
 		{
-			j++;
-			if (little[j] == '\0')
-				return ((char*)big + i);
+			pos = i;
+			while (little[j++] == big[i++])
+			{
+				if (little[j] == 0)
+					return ((char *)&big[pos]);
+			}
+			i = pos + 1;
 		}
+		j = 0;
 		i++;
 	}
 	return (NULL);

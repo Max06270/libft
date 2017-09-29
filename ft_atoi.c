@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tburnouf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/25 11:19:42 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/25 11:34:23 by mkehon           ###   ########.fr       */
+/*   Created: 2017/09/27 14:24:13 by tburnouf          #+#    #+#             */
+/*   Updated: 2017/09/27 14:24:17 by tburnouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,28 @@
 
 int	ft_atoi(const char *str)
 {
-	int	nb;
-	int	sign;
+	int		number;
+	int		signe;
+	int		i;
 
-	nb = 0;
-	sign = 1;
-	while (ft_isspace((int)*str))
-		str++;
-	if (*str == '+' || *str == '-')
+	number = 0;
+	signe = 0;
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == 45)
+		signe = 1;
+	if (str[i] == 45 || str[i] == 43)
+		i++;
+	while (str[i] >= 48 && str[i] <= 57)
 	{
-		if (*str == '-')
-			sign = (-1);
-		str++;
+		number *= 10;
+		number += (int)(str[i] - 48);
+		i++;
 	}
-	while (ft_isdigit((int)*str))
-	{
-		nb = nb * 10 + *str - '0';
-		str++;
-	}
-	return (sign * nb);
+	if (signe)
+		return (-number);
+	else
+		return (number);
 }

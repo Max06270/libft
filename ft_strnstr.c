@@ -3,32 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mkehon <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tburnouf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/25 11:43:38 by mkehon            #+#    #+#             */
-/*   Updated: 2017/09/25 11:44:56 by mkehon           ###   ########.fr       */
+/*   Created: 2017/09/27 14:33:38 by tburnouf          #+#    #+#             */
+/*   Updated: 2017/09/27 14:33:39 by tburnouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t n)
+char	*ft_strnstr(char *big, char *little, size_t len)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
+	size_t	pos;
 
-	if (*little == '\0')
-		return ((char*)big);
 	i = 0;
-	while (big[i] && i < n)
+	j = 0;
+	if (little[0] == 0 || !little)
+		return ((char *)&big[0]);
+	while (big[i] && i < len)
 	{
-		j = 0;
-		while (big[i + j] == little[j] && (i + j) < n)
+		if (little[j] == big[i] && i < len)
 		{
-			j++;
-			if (little[j] == '\0')
-				return ((char*)big + i);
+			pos = i;
+			while (little[j] == big[i] && i < len && big[i++])
+			{
+				j++;
+			}
+			if (little[j] == 0)
+				return ((char *)&big[pos]);
+			i = pos + 1;
 		}
+		j = 0;
 		i++;
 	}
 	return (NULL);

@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_soustract.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tburnouf <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/27 14:33:12 by tburnouf          #+#    #+#             */
-/*   Updated: 2017/09/27 14:33:12 by tburnouf         ###   ########.fr       */
+/*   Created: 2017/09/27 14:43:43 by tburnouf          #+#    #+#             */
+/*   Updated: 2017/09/27 14:44:04 by tburnouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+int	ft_soustract(int a, int b)
 {
-	size_t i;
-	size_t lg;
-
-	i = 0;
-	lg = 0;
-	while (src[i] && lg < len)
-	{
-		dst[i] = src[i];
-		i++;
-		lg++;
-	}
-	while (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	return (a - b);
 }
